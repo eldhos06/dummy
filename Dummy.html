@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+$(document).on('click','.modal-click',function() {
+		
+      var domainName = window.location.host;
+
+      var iframeSource = 'https://lennoxpro.local:9002/proposal-tool/dealer-web/lead/create?dealerdomain=eldhos06.github.io&dealerwebuid=fe9f1da5-b780-4ff3-86b8-ca04f181c41f'; //
+      iframeSource = iframeSource.replace('placeHolderForDomain',domainName)
+      var iframe = document.createElement('iframe');
+      iframe.setAttribute('src', iframeSource);
+      iframe.setAttribute('style', 'position: absolute; height: 100%; border: none');
+      document.getElementById('dummyId').appendChild(iframe);
+});
+</script>
+</head>
+<body>
+
+<h2>This is a heading</h2>
+
+<p>This is a paragraph.</p>
+<p id="dummyId">This is another paragraph.</p>
+
+<button class="modal-click">Click me</button>
+
+</body>
+</html>
